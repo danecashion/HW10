@@ -29,11 +29,11 @@ class Window(QMainWindow, Ui_MainWindow):
         #self.indicator..connect(lambda: self.short()) 
 
     
-    def on():
+    def on(self):
         GPI0.setup(18, GPI0.OUT)
         GPI0.output(18, GPI0.HIGH)
     
-    def off():
+    def off(self):
         GPI0.setup(18, GPI0.OUT)
         GPI0.output(18, GPI0.LOW)
 
