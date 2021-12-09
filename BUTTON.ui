@@ -35,7 +35,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="indicator">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -46,7 +46,7 @@
        <string>INDICATOR</string>
       </property>
       <property name="checkable">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="checked">
        <bool>false</bool>
@@ -71,22 +71,5 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>LED</sender>
-   <signal>clicked(bool)</signal>
-   <receiver>radioButton</receiver>
-   <slot>toggle()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>160</x>
-     <y>310</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>277</x>
-     <y>310</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
