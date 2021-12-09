@@ -9,7 +9,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt 
 
 import time
-import RPi.GPI0 as GPI0
+import RPi.GPIO as GPI0
 
 from PyQt5.uic import loadUi
 
