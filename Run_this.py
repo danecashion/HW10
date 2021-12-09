@@ -24,8 +24,7 @@ class Window(QMainWindow, Ui_MainWindow):
         super().__init__(parent)
         self.setupUi(self)
         self.setWindowTitle('LED button')  
-        Qt.QObject.connect(self.LED,Qt.SIGNAL("clicked()"), self.on) 
-        Qt.QObject.connect(self.LED,Qt.SIGNAL("clicked()"), self.off)  
+        self.LED.clicked.connect(self.LED.on)  
 
     
     def on():
