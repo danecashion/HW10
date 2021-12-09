@@ -11,7 +11,7 @@ from PyQt5.QtCore import Qt
 import time
 import RPi.GPI0 as GPI0
 
-from PyQt5.uic import loadUi, QtCore
+from PyQt5.uic import loadUi
 
 from BUTTON import Ui_MainWindow
 
@@ -24,15 +24,17 @@ class Window(QMainWindow, Ui_MainWindow):
         super().__init__(parent)
         self.setupUi(self)
         self.setWindowTitle('LED button')  
-        QtCore.QObject.connect(self.LED,QtCore.SIGNAL("clocked()"), self.function)   
+        Qt.QObject.connect(self.LED,Qt.SIGNAL("clicked()"), self.on) 
+        Qt.QObject.connect(self.LED,Qt.SIGNAL("clicked()"), self.off)  
+
     
-    def function():
+    def on():
         GPI0.setup(18, GPI0.OUT)
         GPI0.output(18, GPI0.HIGH)
-        time.sleep(2)
+    
+    def off():
+        GPI0.setup(18, GPI0.OUT)
         GPI0.output(18, GPI0.LOW)
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
