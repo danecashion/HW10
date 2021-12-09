@@ -27,13 +27,8 @@ class Window(QMainWindow, Ui_MainWindow):
         self.LED.pressed.connect(lambda: self.on())  
         self.LED.released.connect(lambda: self.off()) 
         GPI0.setup(17, GPI0.IN, pull_up_down=GPI0.PUD_DOWN)
-        start_time = time.time()
-        elapsed_time = 0.0
-        while elapsed_time < 10:
-            if GPI0.input(17) == GPI0.HIGH:
-                self.indicator.setChecked(True)
-                time.sleep(0.1) 
-                elapsed_time = time.time() - start_time
+        if GPI0.input(17) == GPI0.HIGH:
+            self.indicator.setChecked(True)
         
 
     
