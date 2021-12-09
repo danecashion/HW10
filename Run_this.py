@@ -31,7 +31,7 @@ class Window(QMainWindow, Ui_MainWindow):
         elapsed_time = 0.0
         while elapsed_time < 10:
             if GPI0.input(17) == GPI0.HIGH:
-                self.indicator.setChecked()
+                self.indicator.setChecked(True)
                 time.sleep(0.1) 
                 elapsed_time = time.time() - start_time
         
